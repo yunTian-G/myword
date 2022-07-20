@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yuntian.mapper.WorkRecordMapper">
+    <insert id="addRecord" parameterType="com.yuntian.component.pojo.WorkRecord">
+        insert into workbook(id,workname,details,status,userid,reworkcount) value(#{id},#{workName},#{details},#{status},#{userId},#{reworkCount})
+    </insert>
+    <select id="getRecordList" resultType="com.yuntian.component.pojo.WorkRecord">
+        select * from workbook
+    </select>
+</mapper>
