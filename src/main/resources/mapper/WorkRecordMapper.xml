@@ -5,9 +5,10 @@
 
 <mapper namespace="com.yuntian.mapper.WorkRecordMapper">
     <insert id="addRecord" parameterType="com.yuntian.component.pojo.WorkRecord">
-        insert into workbook(id,workname,details,status,userid,reworkcount) value(#{id},#{workName},#{details},#{status},#{userId},#{reworkCount})
+        insert into work_record(id,work_name,details,status,user_id,rework_count,createdate,updatedate,createop,updateop)
+            value(#{id},#{workName},#{details},#{status},#{userId},#{reworkCount},#{createDate},#{updateDate},#{createOp},#{updateOp})
     </insert>
     <select id="getRecordList" resultType="com.yuntian.component.pojo.WorkRecord">
-        select * from workbook
+        select * from work_record
     </select>
 </mapper>

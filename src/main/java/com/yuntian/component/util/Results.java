@@ -1,5 +1,6 @@
 package com.yuntian.component.util;
 
+import com.mysql.cj.util.StringUtils;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,13 @@ public class Results<T> {
     }
 
     public static <T> Results success(long code,String message){
+        if(StringUtils.isNullOrEmpty(message)){
+            if (code == 0){
+                message = "请求成功！";
+            }else{
+                message = "请求失败！";
+            }
+        }
         return new Results(code,message);
     }
 
